@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "item": "Wake up",
+      "status": "uncomplete"
+    },
+    {
+      "id": 2,
+      "item": "Breakfast",
+      "status": "uncomplete"
+    },
+    {
+      "id": 3,
+      "item": "Meeting",
+      "status": "uncomplete"
+    },
+    {
+      "id": 4,
+      "item": "Work",
+      "status": "uncomplete"
+    },
+    {
+      "id": 5,
+      "item": "Lunch",
+      "status": "uncomplete"
+    }
+  ]
+}
