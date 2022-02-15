@@ -24,6 +24,26 @@
       "id": 5,
       "item": "Lunch",
       "status": "uncomplete"
+    },
+    {
+      "id": 6,
+      "item": "Dinner",
+      "status": "uncomplete"
+    },
+    {
+      "id": 7,
+      "item": "Shopping",
+      "status": "uncomplete"
+    },
+    {
+      "id": 8,
+      "item": "Sleep",
+      "status": "uncomplete"
+    },
+    {
+      "item": "well done",
+      "status": "uncompleted",
+      "id": 9
     }
   ]
 }
