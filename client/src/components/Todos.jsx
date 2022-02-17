@@ -33,11 +33,13 @@ export default function Todos() {
   const [status] = useState("uncompleted");
   const [editTodo, setEditTodo] = useState({});
   const [filterData, setFilterData] = useState("");
-  const [filterCategory, setFilterCategory] = useState(null);
+  const [filterCategory, setFilterCategory] = useState(todos);
 
   useEffect(() => {
-    dispatch(fetchTodos());
-  }, [dispatch]);
+    dispatch(fetchTodos())
+    
+  }, []);
+  console.log(filterCategory, "filterCategoryFetch");
 
   const handleStatusTodo = async (id) => {
     const payload = {
@@ -86,9 +88,14 @@ export default function Todos() {
     : setFilterCategory(todos)
   };
   
+  
   let dataSearch = filterCategory.filter((el) => {
     return el.item.toLowerCase().includes(filterData.toLowerCase());
+    
   });
+
+
+  console.log(dataSearch, "dataSearch");
 
   return (
     <div>
@@ -115,6 +122,7 @@ export default function Todos() {
               </form>
             </MDBCol>
             <MDBCol md="6">
+              <h5>Category :</h5>
               {buttons &&
                 buttons.map((type, index) => (
                   <>
@@ -132,7 +140,7 @@ export default function Todos() {
           </div>
 
           <MDBRow className="row">
-            {dataSearch.map((el) => {
+            { dataSearch && dataSearch.map((el) => {
               return (
                 <MDBCol className="col-md-4 mb-4" key={el.id}>
                   <MDBCard className="card text-center ">
