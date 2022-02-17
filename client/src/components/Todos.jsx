@@ -23,7 +23,7 @@ import {
   MDBModalFooter,
   MDBInput,
 } from "mdbreact";
-import { buttons } from "../assets/buttonList";
+import { buttons, buttonStatus } from "../assets/buttonList";
 
 export default function Todos() {
   const dispatch = useDispatch();
@@ -34,12 +34,12 @@ export default function Todos() {
   const [editTodo, setEditTodo] = useState({});
   const [filterData, setFilterData] = useState("");
   const [filterCategory, setFilterCategory] = useState(todos);
+  const [filterStatus, setFilterStatus] = useState(filterCategory);
 
   useEffect(() => {
     dispatch(fetchTodos())
     
-  }, []);
-  console.log(filterCategory, "filterCategoryFetch");
+  }, [filterCategory]);
 
   const handleStatusTodo = async (id) => {
     const payload = {
@@ -80,22 +80,34 @@ export default function Todos() {
   function buttonFilter(category) {
     return todos.filter(el => el.category === category);
   }
+
+  function buttonFilterStatus(status) {
+    return filterCategory.filter(el => el.status === status);
+  }
   
   const handleCategory = (e) => {
+    e.preventDefault()
     const { value } = e.target;
     value !== "all"
     ? setFilterCategory(buttonFilter(value))
     : setFilterCategory(todos)
+    setFilterStatus(filterCategory)
+    console.log(filterCategory, 'FILTERCATEGORy BUTTON');
   };
   
+  const handleStatus = (e) => {
+    e.preventDefault()
+    const { value } = e.target;
+    console.log(value, "value");
+    value !== "all"
+    ? setFilterStatus(buttonFilterStatus(value))
+    : setFilterStatus(filterCategory)
+    console.log(filterStatus, "filterStatus BUTTON");
+  };
   
-  let dataSearch = filterCategory.filter((el) => {
+  let dataSearch = filterStatus.filter((el) => {
     return el.item.toLowerCase().includes(filterData.toLowerCase());
-    
   });
-
-
-  console.log(dataSearch, "dataSearch");
 
   return (
     <div>
@@ -130,6 +142,22 @@ export default function Todos() {
                       key={index}
                       className="btn btn-primary"
                       onClick={handleCategory}
+                      value={type.value}
+                    >
+                      {type.name}
+                    </button>
+                  </>
+                ))}
+            </MDBCol>
+            <MDBCol md="6">
+              <h5>Status :</h5>
+              {buttonStatus &&
+                buttonStatus.map((type, index) => (
+                  <>
+                    <button
+                      key={index}
+                      className="btn btn-primary"
+                      onClick={handleStatus}
                       value={type.value}
                     >
                       {type.name}

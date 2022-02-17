@@ -3,19 +3,19 @@
     {
       "id": 1,
       "item": "Wake up",
-      "status": "uncomplete",
+      "status": "uncompleted",
       "category": "rest"
     },
     {
       "id": 2,
       "item": "Breakfast",
-      "status": "uncomplete",
+      "status": "uncompleted",
       "category": "rest"
     },
     {
       "id": 3,
       "item": "Meeting",
-      "status": "uncomplete",
+      "status": "uncompleted",
       "category": "work"
     },
     {
@@ -39,7 +39,7 @@
     {
       "id": 7,
       "item": "Shopping fun",
-      "status": "uncomplete",
+      "status": "uncompleted",
       "category": "rest"
     },
     {
