@@ -1,8 +1,8 @@
-.todo-row {
-  display: flex;
+.colorTodo {
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4px auto;
+  margin: 4px auto; */
   color: #fff;
   background: linear-gradient(
     90deg,
@@ -15,7 +15,16 @@
   width: 90%;
 }
 
-.todo-row:nth-child(4n + 1) {
+.colorTodo {
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+}
+
+.colorTodo:nth-child(4n + 1) {
   background: linear-gradient(
     90deg,
     rgba(93, 12, 255, 1) 0%,
@@ -23,7 +32,7 @@
   );
 }
 
-.todo-row:nth-child(4n + 2) {
+.colorTodo:nth-child(4n + 2) {
   background: linear-gradient(
     90deg,
     rgba(255, 12, 241, 1) 0%,
@@ -31,7 +40,7 @@
   );
 }
 
-.todo-row:nth-child(4n + 3) {
+.colorTodo:nth-child(4n + 3) {
   background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1) 0%,
