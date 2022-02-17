@@ -3,27 +3,56 @@
     {
       "id": 1,
       "item": "Wake up",
-      "status": "uncomplete"
+      "status": "uncomplete",
+      "category": "rest"
     },
     {
       "id": 2,
       "item": "Breakfast",
-      "status": "uncomplete"
+      "status": "uncomplete",
+      "category": "rest"
     },
     {
       "id": 3,
       "item": "Meeting",
-      "status": "uncomplete"
+      "status": "uncomplete",
+      "category": "work"
     },
     {
       "id": 4,
       "item": "Work",
-      "status": "uncomplete"
+      "status": "completed",
+      "category": "work"
     },
     {
       "id": 5,
-      "item": "Lunch",
-      "status": "uncomplete"
+      "item": "Lunch free",
+      "status": "completed",
+      "category": "rest"
+    },
+    {
+      "id": 6,
+      "item": "Commit github",
+      "status": "completed",
+      "category": "work"
+    },
+    {
+      "id": 7,
+      "item": "Shopping fun",
+      "status": "uncomplete",
+      "category": "rest"
+    },
+    {
+      "id": 8,
+      "item": "Sleep",
+      "status": "completed",
+      "category": "rest"
+    },
+    {
+      "item": "well done yah",
+      "status": "uncompleted",
+      "id": 9,
+      "category": "rest"
     }
   ]
 }

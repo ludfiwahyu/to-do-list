@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addNewTodos } from "../store/actionCreator";
+import { MDBContainer, MDBInput } from "mdbreact";
 
 export default function AddTodo() {
   const dispatch = useDispatch();
-  
+
   const [item, setItem] = useState("");
   const [status] = useState("uncompleted");
   const [todos, setTodos] = useState({
@@ -18,22 +19,31 @@ export default function AddTodo() {
     setTodos({
       ...todos,
       item: value,
-    })
+    });
     // console.log(item, "item");
   };
 
   const handleAddTodo = (e) => {
+    setItem("");
     e.preventDefault();
-    dispatch(addNewTodos(todos))
+    dispatch(addNewTodos(todos));
     console.log(todos, "todos");
   };
 
   return (
     <div>
-      <div className="formAddTodo">
-        <input value={todos.item} type="text" placeholder="Add Todos" onChange={handleGetItem} />
-        <button onClick={handleAddTodo} >Add</button>
-      </div>
+      <MDBContainer>
+        <div className="formAddTodo">
+          <MDBInput
+            value={todos.item}
+            type="text"
+            onChange={handleGetItem}
+            label="Add New Todo"
+          />
+          <button onClick={handleAddTodo} type="button" className="btn btn-primary">Add</button>
+          
+        </div>
+      </MDBContainer>
     </div>
   );
 }
