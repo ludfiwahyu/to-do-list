@@ -39,7 +39,7 @@ export default function Todos() {
   useEffect(() => {
     dispatch(fetchTodos())
     
-  }, [filterCategory]);
+  }, []);
 
   const handleStatusTodo = async (id) => {
     const payload = {
@@ -92,17 +92,14 @@ export default function Todos() {
     ? setFilterCategory(buttonFilter(value))
     : setFilterCategory(todos)
     setFilterStatus(filterCategory)
-    console.log(filterCategory, 'FILTERCATEGORy BUTTON');
   };
   
   const handleStatus = (e) => {
     e.preventDefault()
     const { value } = e.target;
-    console.log(value, "value");
     value !== "all"
     ? setFilterStatus(buttonFilterStatus(value))
     : setFilterStatus(filterCategory)
-    console.log(filterStatus, "filterStatus BUTTON");
   };
   
   let dataSearch = filterStatus.filter((el) => {
